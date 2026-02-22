@@ -1,0 +1,90 @@
+/* ============================================================
+   base.css — Reset, Layout & Global Typography
+   ============================================================ */
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    cursor: none;
+    /* Smooth theme switching transition */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ── Layout Wrappers ── */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    padding: 120px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* ── Noise Film Overlay ── */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.4;
+}
+
+/* ── Respond to reduced-motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+}
+
+/* ── Mobile Breakpoints ── */
+@media (max-width: 768px) {
+
+    .hero-inner,
+    .about-grid,
+    .contact-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        display: none;
+    }
+
+    .hero-stats {
+        gap: 24px;
+    }
+
+    h2.section-title {
+        letter-spacing: -2px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

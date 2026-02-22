@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Prathmesh Desai — Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Prathmesh Desai — Full Stack Developer specializing in Node.js, MongoDB, and modern web technologies." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- CSS — load order matters: tokens → base → animations → components → sections -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+
+  <!-- Three.js (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       CURSOR
+       ══════════════════════════════════════════ -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ══════════════════════════════════════════
+       SCROLL PROGRESS BAR
+       ══════════════════════════════════════════ -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════════════════════════════════════
+       PAGE LOADER
+       ══════════════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-text">PD</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       THREE.JS BACKGROUND
+       ══════════════════════════════════════════ -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+       ══════════════════════════════════════════ -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">PD<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button id="theme-toggle" aria-label="Toggle theme">🌙</button></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+       ══════════════════════════════════════════ -->
+  <main>
+
+    <!-- ── HERO ── -->
+    <section id="hero">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Left: Text -->
+          <div class="hero-content">
+            <div class="hero-tag reveal">Available for Work</div>
+
+            <h1 class="hero-title reveal reveal-delay-1">
+              <span class="line-name">PRATHMESH</span><br>
+              <span class="line-accent">DESAI</span><br>
+              <span class="line-gold">BUILDS.</span>
+            </h1>
+
+            <!-- Typewriter -->
+            <div class="typewriter-wrap reveal reveal-delay-2">
+              <span class="typewriter-label">I am a</span>
+              <span class="typewriter-text" id="typewriter"></span>
+              <span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-desc reveal reveal-delay-2">
+              Crafting high-performance web applications with Node.js, MongoDB,
+              and modern frontend technologies. Turning ideas into digital reality.
+            </p>
+
+            <div class="hero-ctas reveal reveal-delay-3">
+              <a href="#projects" class="btn btn-primary magnetic-wrap">View Projects ▶</a>
+              <a href="#contact"  class="btn btn-outline magnetic-wrap">Let's Talk →</a>
+              <button id="cv-btn" class="btn btn-cv magnetic-wrap">⬇ Download CV</button>
+            </div>
+
+            <div class="hero-stats reveal reveal-delay-4">
+              <div class="stat-item">
+                <h3 id="stat-projects">0+</h3>
+                <p>Projects Built</p>
+              </div>
+              <div class="stat-item">
+                <h3 id="stat-tech">0+</h3>
+                <p>Technologies</p>
+              </div>
+              <div class="stat-item">
+                <h3 id="stat-exp">0+</h3>
+                <p>Years Learning</p>
+              </div>
+            </div>
+
+            <!-- Leopard Runner -->
+          </div>
+
+          <!-- Right: 3D Rotating Cube -->
+          <div class="hero-visual">
+            <div class="hero-cube-wrap">
+              <div class="cube-face front"><span>&lt;/&gt;</span></div>
+              <div class="cube-face back"><span>JS</span></div>
+              <div class="cube-face right"><span>NODE</span></div>
+              <div class="cube-face left"><span>MONGO</span></div>
+              <div class="cube-face top"><span>FULL STACK</span></div>
+              <div class="cube-face bottom"><span>DEV.2025</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <div>
+            <div class="section-eyebrow reveal">About Me</div>
+            <h2 class="section-title reveal reveal-delay-1">
+              WHO<br>AM I<span style="color:var(--accent)">?</span>
+            </h2>
+            <div class="about-text">
+              <p class="reveal reveal-delay-2">
+                I'm <strong>Prathmesh Desai</strong>, a passionate Full Stack Developer who loves
+                building scalable, user-first web experiences. I think in systems, design in
+                components, and ship in sprints.
+              </p>
+              <p class="reveal reveal-delay-3">
+                From architecting <strong>RESTful APIs</strong> with Node.js and Express, to crafting
+                responsive UIs and managing MongoDB databases — I handle the full stack with precision.
+              </p>
+              <p class="reveal reveal-delay-4">
+                When I'm not coding, I'm exploring new tech, contributing to projects, and
+                levelling up my skills every single day.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3D Tilt Identity Card -->
+          <div class="about-visual reveal reveal-delay-2">
+            <div class="avatar-card-3d" id="avatar-tilt">
+              <div class="avatar-card-lines"></div>
+              <div class="corner-accent tl"></div>
+              <div class="corner-accent tr"></div>
+              <div class="corner-accent bl"></div>
+              <div class="corner-accent br"></div>
+              <div class="avatar-front">
+                <div class="avatar-monogram">PD</div>
+                <div class="avatar-name">Prathmesh Desai</div>
+                <div class="avatar-role">Full Stack Developer</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-eyebrow reveal">My Arsenal</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          TECH<br>STACK<span style="color:var(--accent)">.</span>
+        </h2>
+        <!-- Skill cards injected by main.js -->
+        <div class="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-eyebrow reveal">Featured Work</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          MY<br>PROJECTS<span style="color:var(--accent)">.</span>
+        </h2>
+        <!-- Project cards injected by main.js -->
+        <div class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-inner">
+
+          <div>
+            <div class="section-eyebrow reveal">Get In Touch</div>
+            <h2 class="contact-headline reveal reveal-delay-1">
+              LET'S<br><em>BUILD</em><br>TOGETHER
+            </h2>
+            <div class="contact-links reveal reveal-delay-2">
+              <a href="mailto:prathameshd667@gmail.com" class="contact-link">
+                <span>✉</span> prathameshd667@gmail.com
+                <span class="link-arrow" style="margin-left:auto">↗</span>
+              </a>
+              <a href="https://github.com/PrathameshDDesai" target="_blank" rel="noopener" class="contact-link">
+                <span>⌥</span> github.com/PrathameshDDesai
+                <span class="link-arrow" style="margin-left:auto">↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/prathamesh-desai-403bb5362/" target="_blank" rel="noopener" class="contact-link">
+                <span>◈</span> linkedin.com/in/prathamesh-desai
+                <span class="link-arrow" style="margin-left:auto">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal reveal-delay-2">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" name="from_name" type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="reply_to" type="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary magnetic-wrap" style="align-self:flex-start; border:none;">
+              Send Message ▶
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       SCROLL TO TOP
+       ══════════════════════════════════════════ -->
+  <button id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════════ -->
+  <footer>
+    <p>© 2025 Prathmesh Desai. All rights reserved.</p>
+    <p style="color:#333">Built with 💻 &amp; ☕</p>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT MODULES
+       Load order: data → modules → entry point
+       ══════════════════════════════════════════ -->
+  <!-- EmailJS — makes contact form send real emails. Get your keys at emailjs.com -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- JavaScript Modules: data → modules → entry point -->
+  <script src="js/data.js"></script>
+  <script src="js/three-bg.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

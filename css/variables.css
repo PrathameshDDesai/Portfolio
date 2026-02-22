@@ -1,0 +1,107 @@
+/* ============================================================
+   variables.css — Design Tokens & Theme
+   ============================================================ */
+
+:root {
+  /* ── Dark Mode (Default) ── */
+  --bg: #030305;
+  /* Near-black with cool blue tint    */
+  --surface: #0a0a10;
+  /* Slightly lighter dark surface      */
+  --border: #1c1c28;
+  /* Subtle cool-toned border           */
+  --accent: #ff3c00;
+  /* Vibrant orange-red                 */
+  --accent2: #ffbe00;
+  /* Gold accent for contrast           */
+  --text: #eeeef2;
+  /* Slightly warm white text           */
+  --muted: #55556a;
+  /* Cool-toned muted text              */
+
+  --glow-accent: rgba(255, 60, 0, 0.12);
+  --glow-accent2: rgba(255, 190, 0, 0.08);
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════════
+   DARK MODE — Deep Space Aesthetic
+   Unique features: radial glow on bg, blue-tinted surfaces,
+   vivid orange-red + gold accent contrast.
+   ══════════════════════════════════════════════════════════ */
+body {
+  /* Subtle radial orange glow from top-left — gives depth */
+  background-image:
+    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(255, 60, 0, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 90% 100%, rgba(255, 190, 0, 0.04) 0%, transparent 60%);
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE — Warm Parchment Aesthetic
+   Unique features: warm off-white base, terracotta accent,
+   rich navy text, honey-gold highlights, depth via shadows.
+   ══════════════════════════════════════════════════════════ */
+body.light {
+  --bg: #fdf6ef;
+  /* Warm parchment/cream              */
+  --surface: #f3e9df;
+  /* Slightly darker warm card          */
+  --border: #ddd1c4;
+  /* Sandy warm border                  */
+  --accent: #d63800;
+  /* Deep terracotta (darker in light)  */
+  --accent2: #c98a00;
+  /* Rich amber / honey gold            */
+  --text: #1a1210;
+  /* Near-black warm brown              */
+  --muted: #7a6a5a;
+  /* Warm muted brown                   */
+
+  --glow-accent: rgba(214, 56, 0, 0.08);
+  --glow-accent2: rgba(201, 138, 0, 0.06);
+
+  background-image:
+    radial-gradient(ellipse 55% 40% at 85% 0%, rgba(214, 56, 0, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 35% 25% at 10% 100%, rgba(201, 138, 0, 0.05) 0%, transparent 60%);
+}
+
+/* Light mode specific component overrides */
+body.light #bg-canvas {
+  opacity: 0.08;
+}
+
+body.light nav.scrolled {
+  background: rgba(253, 246, 239, 0.96);
+  backdrop-filter: blur(20px);
+}
+
+body.light .avatar-front {
+  background: linear-gradient(135deg, #f3e9df 0%, #fde8d8 100%);
+}
+
+body.light .project-front {
+  background: var(--surface);
+}
+
+body.light .skill-card {
+  background: var(--surface);
+}
+
+body.light .skill-card:hover {
+  background: #ede3d9;
+}
+
+body.light .form-group input,
+body.light .form-group textarea {
+  color: var(--text);
+}
+
+body.light footer {
+  background: #f3e9df;
+}
+
+body.light h1.hero-title .line-accent {
+  -webkit-text-stroke: 2px var(--accent);
+}
